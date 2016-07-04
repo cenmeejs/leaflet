@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>leaflet</title>
+    <link rel="stylesheet" href="../lib/leaflet.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="../lib/leaflet-src.js"></script>
+    <script>
+        var map = L.map('map',{
+            center:[22.5422850000,113.9804290000],
+            maxZoom:7,
+            minZoom:3,
+            zoom:4,
+            maxBounds:[[42.5422850000,133.9804290000], [2.5422850000,93.9804290000]]
+        });
+//        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+//            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+//        }).addTo(map);
+        L.marker([22.5422850000,113.9804290000]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+                .openPopup();
+        L.marker([12.5422850000,103.9804290000]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+                .openPopup();
+        L.marker([22.5422850000,113.9804290000]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+                .openPopup();
+        L.marker([32.5422850000,123.9804290000]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+                .openPopup();
+        L.marker([22.5422850000,103.9804290000]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+                .openPopup();
+        var imageUrl = '../imgs/tree.jpg',
+            imageBounds = [[42.5422850000,133.9804290000], [2.5422850000,93.9804290000]];
+
+        L.imageOverlay(imageUrl, imageBounds).addTo(map);
+    </script>
+</body>
+</html>
