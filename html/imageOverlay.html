@@ -20,34 +20,46 @@
     <script src="../lib/leaflet-src.js"></script>
     <script>
         var map = L.map('map',{
-            center:[22.5422850000,113.9804290000],
+            center:[22,113],
             maxZoom:7,
             minZoom:3,
             zoom:4,
-            maxBounds:[[42.5422850000,133.9804290000], [2.5422850000,93.9804290000]]
+            maxBounds:[[2,93], [42,133]]
         });
-//        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-//            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-//        }).addTo(map);
-        L.marker([22.5422850000,113.9804290000]).addTo(map)
-                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-                .openPopup();
-        L.marker([12.5422850000,103.9804290000]).addTo(map)
-                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-                .openPopup();
-        L.marker([22.5422850000,113.9804290000]).addTo(map)
-                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-                .openPopup();
-        L.marker([32.5422850000,123.9804290000]).addTo(map)
-                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-                .openPopup();
-        L.marker([22.5422850000,103.9804290000]).addTo(map)
-                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-                .openPopup();
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker([32,93]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> 1');
+        L.marker([32,113]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> 2');
+        L.marker([32,133]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> 3');
+        L.marker([22,93]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> 4');
+        L.marker([22,113]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> 5');
+        L.marker([22,133]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> 6');
+        L.marker([12,93]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> 7');
+        L.marker([12,113]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> 8');
+        L.marker([12,133]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> 9');
         var imageUrl = '../imgs/tree.jpg',
-            imageBounds = [[42.5422850000,133.9804290000], [2.5422850000,93.9804290000]];
+            imageBounds = [[2,93], [42,133]];
 
         L.imageOverlay(imageUrl, imageBounds).addTo(map);
+        map.setView([17,100],4);
+        map.setZoom(6);
+        map.zoomIn(2);
+        map.zoomOut(3);
+        console.log(map.getCenter());
+        console.log(map.getZoom());
+        console.log(map.getMinZoom());
+        console.log(map.getMaxZoom());
+        console.log(map.getBounds());
     </script>
 </body>
 </html>
